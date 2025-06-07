@@ -1,0 +1,79 @@
+﻿<body class="bg-light">
+    <div class="container py-4">
+        <!-- Top controls -->
+        <div class="row mb-3">
+            <div class="col-md-2">
+                <select class="form-select" id="regionInput">
+                    <option selected>Language (English US)</option>
+                    <option>Uzbek</option>
+                    <option>Русский</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-xl">
+                    <input type="range" class="form-range" id="errorsCountSlider" step="0.25" value="0" max="10"></input>
+                </div>
+            </div>
+            <div class="row">
+                <label for="errorsCountText" class="form-label">Mistakes per line</label>
+            </div>
+            <div class="row">
+                <div class="col-xl">
+                    <input type="number" class="form-input form-control" id="errorsCountText" value="0" min="0" max="1000">
+                </div>
+            </div>
+            <div class="row">
+                <label for="seedInput" class="form-label">Seed</label>
+            </div>
+            <div class="row">
+                <div class="col-xl mt-1">
+                    <input type="text" class="form-input form-control" id="seedInput">
+                </div>
+                <div class="col-sm mt-1 text-end">
+                    <button type="button" class="btn btn-primary" id="randomSeed">Random seed</button>
+                </div>
+                <div class="col-sm mt-1 text-end">
+                    <button type="button" class="btn download" id="createCsv">Download exel file</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered" id="dataTable">
+                <thead class="table-light">
+                <tr>
+                    <td>
+                        #
+                    </td>
+                    <td>
+                        Id
+                    </td>
+                    <td>
+                        FirstName
+                    </td>
+                    <td>
+                        LastName
+                    </td>
+                    <td>
+                        Gender
+                    </td>
+                    <td>
+                        Address
+                    </td>
+                    <td>
+                        Phone Number
+                    </td>
+                </tr>
+                </thead>
+                <tbody class="table-body">
+                </tbody>
+            </table>
+
+        </div>
+  
+        
+    </div>
+
+
+</body>
