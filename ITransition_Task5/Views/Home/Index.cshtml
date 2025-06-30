@@ -1,79 +1,56 @@
-﻿<body class="bg-light">
-    <div class="container py-4">
-        <!-- Top controls -->
-        <div class="row mb-3">
-            <div class="col-md-2">
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container py-4">
+    <div class="card shadow-lg rounded-4 p-4 mb-4">
+        <h3 class="mb-3">Generate Your Fake Data</h3>
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label for="regionInput" class="form-label">Choose your desired country</label>
                 <select class="form-select" id="regionInput">
-                    <option selected>Language (English US)</option>
-                    <option>Uzbek</option>
-                    <option>Русский</option>
+                    <option value="0">Russia</option>
+                    <option value="1">United States of America</option>
+                    <option value="2">Germany</option>
                 </select>
             </div>
-            <div class="row">
-                <div class="col-xl">
-                    <input type="range" class="form-range" id="errorsCountSlider" step="0.25" value="0" max="10"></input>
-                </div>
+
+            <div class="col-md-6">
+                <label for="errorsCountSlider" class="form-label">Mistakes per line</label>
+                <input type="range" class="form-range" id="errorsCountSlider" step="0.25" value="0" max="10">
+                <input type="number" class="form-control mt-1" id="errorsCountText" value="0" min="0" max="1000">
             </div>
-            <div class="row">
-                <label for="errorsCountText" class="form-label">Mistakes per line</label>
-            </div>
-            <div class="row">
-                <div class="col-xl">
-                    <input type="number" class="form-input form-control" id="errorsCountText" value="0" min="0" max="1000">
-                </div>
-            </div>
-            <div class="row">
+
+            <div class="col-md-6">
                 <label for="seedInput" class="form-label">Seed</label>
+                <input type="text" class="form-control" id="seedInput" placeholder="Enter seed (optional)">
             </div>
-            <div class="row">
-                <div class="col-xl mt-1">
-                    <input type="text" class="form-input form-control" id="seedInput">
-                </div>
-                <div class="col-sm mt-1 text-end">
-                    <button type="button" class="btn btn-primary" id="randomSeed">Random seed</button>
-                </div>
-                <div class="col-sm mt-1 text-end">
-                    <button type="button" class="btn download" id="createCsv">Download exel file</button>
-                </div>
+
+            <div class="col-md-6 d-flex align-items-end justify-content-end gap-2">
+                <button type="button" class="btn btn-secondary" id="randomSeed">Random Seed</button>
+                <button type="button" class="btn btn-success" id="createCsv">Download Excel</button>
             </div>
-        </div>
-
-        <!-- Table -->
-        <div class="table-responsive">
-            <table class="table table-hover table-bordered" id="dataTable">
-                <thead class="table-light">
-                <tr>
-                    <td>
-                        #
-                    </td>
-                    <td>
-                        Id
-                    </td>
-                    <td>
-                        FirstName
-                    </td>
-                    <td>
-                        LastName
-                    </td>
-                    <td>
-                        Gender
-                    </td>
-                    <td>
-                        Address
-                    </td>
-                    <td>
-                        Phone Number
-                    </td>
-                </tr>
-                </thead>
-                <tbody class="table-body">
-                </tbody>
-            </table>
-
-        </div>
-  
-        
+        </form>
     </div>
 
-
-</body>
+    <div class="card shadow-lg rounded-4 p-3">
+        <h4 class="mb-3">Generated Data</h4>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle" id="dataTable">
+                <thead class="table-light">
+                    <tr>
+                        <th>#</th>
+                        <th>Id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <!-- Data rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

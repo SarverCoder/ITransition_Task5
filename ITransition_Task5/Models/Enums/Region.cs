@@ -2,7 +2,8 @@
 
 public enum Region
 {
-    Russian,
-    English,
-    Uzbekistan
+    ru,
+    en_US,
+    de,
+    fr
 }
