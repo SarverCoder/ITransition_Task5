@@ -1,6 +1,6 @@
 ﻿
 {
-    const baseUrl = "https://localhost:7155";
+    const baseUrl = window.location.origin;
     const dataTable = document.getElementById("dataTable");
     const mistakesSlider = document.getElementById("errorsCountSlider");
     const mistakesInput = document.getElementById("errorsCountText");
